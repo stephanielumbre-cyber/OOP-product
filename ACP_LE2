@@ -1,0 +1,12 @@
+class Student:
+    def __init__(self, student_id, email, grade=None, courses=None):
+        pass
+    def __str__(self):
+        pass
+    
+class StudentsRecords:
+    def __init__(self):
+        pass
+    def add_students(self, students_id, student_name, email, grades=None, courses=None):
+        pass
+    
