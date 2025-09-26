@@ -1,12 +1,77 @@
 class Student:
-    def __init__(self, student_id, email, grade=None, courses=None):
-        pass
-    def __str__(self):
-        pass
+    student_records = []
+    student_counter = 0
     
-class StudentsRecords:
+    def __init__(self, student_id, student_name, email, grades=None, courses=None):
+        self.student_id = student_id
+        self.student_name = student_name
+        self.email =  email
+        self.grades = grade if grades is not None else {}
+        self.courses = courses if courses is not None else set ()
+    pass
+
+    def __str__(self):
+        student_id, student_name = self.id_name
+        return (
+        f"--- student record ---\n"
+        f"ID: {student_id}\n"
+        f"Name: {student_name}\n"
+        f"Email: {self.email}\n"
+        f"Grades: {self.grades}\n"    
+        f"Courses: {self.courses}"    
+    )
+
+class StudentRecords:
     def __init__(self):
-        pass
-    def add_students(self, students_id, student_name, email, grades=None, courses=None):
-        pass
+        return f"student id: {self.student_id}, student name: {self.student_name}, email: {self.email}, grades: {self.grades}, courses: {self.courses} "
+    pass
+
+    @classmethod
+    def add_students(self, student_id, student_name, email, grades=None, courses=None):
+        student = student(student_id, student_name, email, grades, courses);
+        self.student_counter += 1
+        self.student.append(student)
+        return "Student added successfully!"
+    pass
+
+    @classmethod
+    def update_student(self,student_id, student_name, email=None, grades=None, courses=None):
+        for student in self.inventory:
+            if student.student_id == student_id:
+                if student_name is not None:
+                    student.student_name = student_name
+                if email is not None:
+                    student.email = email
+                if grades is not None:
+                    student.grades.update = grades
+                if courses is not None:
+                    student.courses.update = courses
+                return "Student Updated Successsfully!"
+            return "Student not found."
+    pass
+
+    @classmethod
+    def delete_student(self, student_id):
+        for student in self.inventory:
+            if student.student_id == student_id:
+                self.inventory.remove(student)
+            return "Student Deleted Successfully!"
+        return "Student not found!"
+    pass
+
+    @classmethod
+    def enroll_course(self, student_id, course):
+        if student:
+            student.courses.add == course
+            return f"Student ID {student_id} successfully enrolled in {course}."
+        
+        return "Student not found"
+
+    @classmethod
+    def search_student(self, student_id):
+        if student: 
+             return str(student)
+        
+        return "Student not found"
+
     
