@@ -20,6 +20,7 @@ class Student:
         f"Grades: {self.grades}\n"    
         f"Courses: {self.courses}"    
     )
+    pass
 
 class StudentRecords:
     def __init__(self):
@@ -66,6 +67,7 @@ class StudentRecords:
             return f"Student ID {student_id} successfully enrolled in {course}."
         
         return "Student not found"
+    pass
 
     @classmethod
     def search_student(self, student_id):
@@ -73,5 +75,6 @@ class StudentRecords:
              return str(student)
         
         return "Student not found"
+    pass
 
     
